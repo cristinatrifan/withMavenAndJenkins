@@ -2,7 +2,10 @@ package org.example;
 
 import beans.MyBean;
 import beans.MyBeanTwo;
+import beans2.Cat;
+import beans2.Owner;
 import config.ProjectConfig;
+import config.ProjectConfig2;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import services.ProductDeliveryService;
 
@@ -39,6 +42,16 @@ public class Main {
 
             ProductDeliveryService service = context.getBean(ProductDeliveryService.class);
             service.addSomeProducts();
+        }
+
+        try (var context = new AnnotationConfigApplicationContext(ProjectConfig2.class)) {
+            Cat x = context.getBean(Cat.class);
+            Owner o = context.getBean(Owner.class);
+
+            x.setName("Leo"); //this will change the attribute of the Cat bean itself
+
+            System.out.println(x);
+            System.out.println(o);
         }
     }
 }
