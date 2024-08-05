@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
-@ComponentScan(basePackages = {"beans2", "repositories", "services"})
+@ComponentScan(basePackages = {"beans2", "repositories", "services", "aspects"})
+@EnableAspectJAutoProxy // it enables aspects
 public class ProjectConfig2 {
 
     @Bean
