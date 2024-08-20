@@ -41,7 +41,7 @@ public class Main {
             System.out.println(b4.getText());
 
             ProductDeliveryService service = context.getBean(ProductDeliveryService.class);
-            service.addSomeProducts();
+            //service.addSomeProducts();
         }
 
         try (var context = new AnnotationConfigApplicationContext(ProjectConfig2.class)) {
@@ -55,6 +55,7 @@ public class Main {
 
             ProductDeliveryService service = context.getBean(ProductDeliveryService.class);
             service.addSomeProducts();
+            service.showBeers();
         }
     }
 }

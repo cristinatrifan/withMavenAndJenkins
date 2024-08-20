@@ -15,6 +15,7 @@ Use for decorating functionality with extra behavior, not change behavior:
 
 Aspects run at runtime, only runtime annotations can work here
 Runtime weaving involves applying aspects during the execution of the program.
+AOP uses reflection
  */
 @Aspect // not stereotype annotation
 @Component
